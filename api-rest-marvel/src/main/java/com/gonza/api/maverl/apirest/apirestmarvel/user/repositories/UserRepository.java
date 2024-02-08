@@ -1,4 +1,4 @@
-package com.gonza.api.maverl.apirest.apirestmarvel.repositories;
+package com.gonza.api.maverl.apirest.apirestmarvel.user.repositories;
 
 import java.util.Optional;
 

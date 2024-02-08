@@ -15,8 +15,8 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.gonza.api.maverl.apirest.apirestmarvel.repositories.UserRepository;
 import com.gonza.api.maverl.apirest.apirestmarvel.user.entities.User;
+import com.gonza.api.maverl.apirest.apirestmarvel.user.repositories.UserRepository;
 
 @Service
 public class JpaUserDetailsService implements UserDetailsService {

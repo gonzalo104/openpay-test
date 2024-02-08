@@ -1,4 +1,4 @@
-package com.gonza.api.maverl.apirest.apirestmarvel.controllers;
+package com.gonza.api.maverl.apirest.apirestmarvel.character;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
