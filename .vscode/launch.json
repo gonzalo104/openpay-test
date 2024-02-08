@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-ApiRestMarvelApplication<api-rest-marvel>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.gonza.api.maverl.apirest.apirestmarvel.ApiRestMarvelApplication",
+      "projectName": "api-rest-marvel",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
