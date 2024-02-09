@@ -16,8 +16,9 @@ public class CharacterService {
     this.restTemplate = restTemplate;
   }
 
-  public CharacterData getCharacters() {
-    CharacterResponse response = restTemplate.getForObject(BASE_URL, CharacterResponse.class);
+  public CharacterData getCharacters(int offset, int limit) {
+    String url = BASE_URL + "?offset=" + offset + "&limit=" + limit;
+    CharacterResponse response = restTemplate.getForObject(url, CharacterResponse.class);
 
     if (response == null) {
       throw new RuntimeException("No characters found");

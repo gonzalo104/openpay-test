@@ -1,4 +1,4 @@
-package com.gonza.api.maverl.apirest.apirestmarvel.user;
+package com.gonza.api.maverl.apirest.apirestmarvel.user.controller;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -10,8 +10,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.gonza.api.maverl.apirest.apirestmarvel.user.entities.User;
-import com.gonza.api.maverl.apirest.apirestmarvel.user.interfaces.UserService;
+import com.gonza.api.maverl.apirest.apirestmarvel.user.model.User;
+import com.gonza.api.maverl.apirest.apirestmarvel.user.service.IUserService;
 
 import jakarta.validation.Valid;
 
@@ -23,7 +23,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class UserController {
 
   @Autowired
-  private UserService userService;
+  private IUserService userService;
 
   @PostMapping("/register")
   public  ResponseEntity<?> create(@Valid @RequestBody User user, BindingResult result) {

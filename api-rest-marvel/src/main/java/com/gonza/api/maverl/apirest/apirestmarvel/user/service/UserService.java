@@ -1,22 +1,21 @@
-package com.gonza.api.maverl.apirest.apirestmarvel.user;
+package com.gonza.api.maverl.apirest.apirestmarvel.user.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.gonza.api.maverl.apirest.apirestmarvel.user.entities.User;
-import com.gonza.api.maverl.apirest.apirestmarvel.user.interfaces.UserService;
-import com.gonza.api.maverl.apirest.apirestmarvel.user.repositories.UserRepository;
+import com.gonza.api.maverl.apirest.apirestmarvel.user.model.User;
+import com.gonza.api.maverl.apirest.apirestmarvel.user.repository.IUserRepository;
 
 @Service
-public class UserServiceImpl implements UserService {
+public class UserService implements IUserService {
 
   @Autowired
   private PasswordEncoder passwordEncoder;
 
   @Autowired
-  private UserRepository userRepository;
+  private IUserRepository userRepository;
 
   @Override
   @Transactional

@@ -17,7 +17,7 @@ import org.springframework.security.core.GrantedAuthority;
 import com.fasterxml.jackson.core.exc.StreamReadException;
 import com.fasterxml.jackson.databind.DatabindException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.gonza.api.maverl.apirest.apirestmarvel.user.entities.User;
+import com.gonza.api.maverl.apirest.apirestmarvel.user.model.User;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

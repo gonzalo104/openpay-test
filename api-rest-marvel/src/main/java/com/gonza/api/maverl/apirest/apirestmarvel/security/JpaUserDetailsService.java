@@ -15,13 +15,13 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.gonza.api.maverl.apirest.apirestmarvel.user.entities.User;
-import com.gonza.api.maverl.apirest.apirestmarvel.user.repositories.UserRepository;
+import com.gonza.api.maverl.apirest.apirestmarvel.user.model.User;
+import com.gonza.api.maverl.apirest.apirestmarvel.user.repository.IUserRepository;
 
 @Service
 public class JpaUserDetailsService implements UserDetailsService {
   @Autowired
-  private UserRepository repository;
+  private IUserRepository repository;
 
   @Override
   @Transactional(readOnly = true)

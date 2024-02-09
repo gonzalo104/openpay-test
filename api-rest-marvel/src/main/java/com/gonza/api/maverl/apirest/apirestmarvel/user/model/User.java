@@ -1,4 +1,4 @@
-package com.gonza.api.maverl.apirest.apirestmarvel.user.entities;
+package com.gonza.api.maverl.apirest.apirestmarvel.user.model;
 
 import java.util.Date;
 
@@ -43,7 +43,9 @@ public class User {
   @PrePersist
   public void prePersist() {
     enabled = true;
-    createdAt = new Date();
+    Date now = new Date();
+    createdAt = now;
+    updatedAt = now;
   }
 
   @PreUpdate
@@ -98,7 +100,5 @@ public class User {
   public void setUsername(String username) {
     this.username = username;
   }
-
-  
 
 }

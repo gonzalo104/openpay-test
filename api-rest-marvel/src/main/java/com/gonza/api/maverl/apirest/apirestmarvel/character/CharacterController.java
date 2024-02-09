@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gonza.consumer.marvel.consumermarvel.services.CharacterService;
@@ -16,8 +17,10 @@ public class CharacterController {
   private CharacterService characterService;
 
   @GetMapping
-  public CharacterData getCharacters() {
-    return characterService.getCharacters();
+  public CharacterData getCharacters(
+      @RequestParam(defaultValue = "0") int offset,
+      @RequestParam(defaultValue = "100") int limit) {
+    return characterService.getCharacters(offset, limit);
   }
 
   @GetMapping("/{id}")

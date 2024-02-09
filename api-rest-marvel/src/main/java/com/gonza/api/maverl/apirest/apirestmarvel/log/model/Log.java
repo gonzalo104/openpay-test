@@ -1,4 +1,4 @@
-package com.gonza.api.maverl.apirest.apirestmarvel.log.entities;
+package com.gonza.api.maverl.apirest.apirestmarvel.log.model;
 
 import java.util.Date;
 
