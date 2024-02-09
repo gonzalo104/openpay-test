@@ -1,0 +1,50 @@
+@import './../../../../assets/scss/variables';
+
+.container-bg {
+  background-image: url('../../../../assets/img/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.card {
+  background-color: ºrgba(255, 255, 255, 0.8);
+  padding: 25px;
+  width: 80%;
+  margin: auto;
+}
+
+.logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin: auto;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: $color-primary;
+}
+
+.card-header {
+  background-color: white;
+}
+
+.error-message {
+  color: #DC3545;
+  font-size: 12px;
+  margin-top: 8px;
+  line-height: 14px;
+  margin-top: 16px;
+}

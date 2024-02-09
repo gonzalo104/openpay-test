@@ -8,6 +8,17 @@
       "mainClass": "com.gonza.api.maverl.apirest.apirestmarvel.ApiRestMarvelApplication",
       "projectName": "api-rest-marvel",
       "args": "",
+      "envFile": "${workspaceFolder}/.env",
+      "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=62535 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=api-rest-marvel"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-ConsumerMarvelApplication<consumer-marvel>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.gonza.consumer.marvel.consumermarvel.ConsumerMarvelApplication",
+      "projectName": "consumer-marvel",
+      "args": "",
       "envFile": "${workspaceFolder}/.env"
     }
   ]

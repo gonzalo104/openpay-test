@@ -1,0 +1,15 @@
+<app-loader [loading]="logBehaviorService.loading"></app-loader>
+
+<div class="mb-4" *ngIf="logs.length">
+  <h6>
+    Activities
+    <span class="badge bg-dark text-white float-end">{{ logs.length }}</span>
+  </h6>
+  <ul class="list-group">
+    <ng-container>
+      <li *ngFor="let log of logs" class="list-group-item">
+        {{ log?.endpoint }} - {{ log?.date | date: 'medium' }}
+      </li>
+    </ng-container>
+  </ul>
+</div>

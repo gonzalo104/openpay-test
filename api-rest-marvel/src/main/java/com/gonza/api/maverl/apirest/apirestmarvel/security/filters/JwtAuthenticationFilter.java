@@ -6,6 +6,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
@@ -104,7 +105,7 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     body.put("error", failed.getMessage());
 
     response.getWriter().write(new ObjectMapper().writeValueAsString(body));
-    response.setStatus(401);
+    response.setStatus(HttpStatus.BAD_REQUEST.value());
     response.setContentType(CONTENT_TYPE);
   }
 }

@@ -26,6 +26,7 @@ public class LogInterceptor implements HandlerInterceptor {
   @SuppressWarnings("null")
   @Override
   public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+    //return true;
     HandlerMethod method = (HandlerMethod) handler;
     logger.info("LogInterceptor: preHandler()... " + method.getMethod().getName());
 

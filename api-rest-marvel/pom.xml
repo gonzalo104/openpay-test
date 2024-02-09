@@ -40,11 +40,13 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+	
 		<dependency>
 			<groupId>com.gonza.consumer.marvel</groupId>
 			<artifactId>consumer-marvel</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>

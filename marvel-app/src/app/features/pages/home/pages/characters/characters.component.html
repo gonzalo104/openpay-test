@@ -1,0 +1,63 @@
+<app-loader [loading]="characterBehaviorService.loading"></app-loader>
+
+<app-list
+  [items]="characters"
+  (onItemClickEvent)="onCharacterClick($event)"
+></app-list>
+
+<div
+  class="modal"
+  id="modal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <button
+    type="button"
+    class="btn-close btn-close-white"
+    data-bs-dismiss="modal"
+    aria-label="Close"
+  ></button>
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <img
+          *ngIf="character"
+          [src]="getImage(character)"
+          class="img-fluid mx-auto d-block"
+        />
+      </div>
+      <div class="modal-body">
+        <ng-container *ngIf="character">
+          <h1 class="text-primary">{{ character.name }}</h1>
+          <p [innerHtml]="character.description"></p>
+
+          <app-list-group
+            title="Comics"
+            [items]="character.comics.items"
+          ></app-list-group>
+          <app-list-group
+            title="Series"
+            [items]="character.series.items"
+          ></app-list-group>
+          <app-list-group
+            title="Stories"
+            [items]="character.stories.items"
+          ></app-list-group>
+          <app-list-group
+            title="Events"
+            [items]="character.events.items"
+          ></app-list-group>
+          <app-list-group
+            title="References"
+            key="type"
+            link="url"
+            [isLink]="true"
+            [items]="character.urls"
+          >
+          </app-list-group>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

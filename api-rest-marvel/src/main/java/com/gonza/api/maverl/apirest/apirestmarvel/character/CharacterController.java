@@ -10,7 +10,7 @@ import com.gonza.consumer.marvel.consumermarvel.services.CharacterService;
 import com.gonza.consumer.marvel.consumermarvel.models.CharacterData;
 
 @RestController
-@RequestMapping("/api/characters")
+@RequestMapping("/characters")
 public class CharacterController {
   @Autowired
   private CharacterService characterService;

@@ -1,0 +1,67 @@
+<div class="container-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-md-6 offset-md-3">
+        <div class="card mt-5">
+          <div class="text-center">
+            <img
+              class="logo"
+              src="../../../../assets/img/logo.jpeg"
+              alt="Logo"
+            />
+            <h3>¡Welcome!</h3>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="formLogin">
+              <div class="form-group">
+                <label for="username">username:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="username"
+                  placeholder="Jhon04"
+                  formControlName="username"
+                />
+                <div *ngIf="usenameControl?.errors && usenameControl?.touched">
+                  <div *ngIf="usenameControl?.hasError('required')">
+                    <p class="error-message">username is required</p>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="password">Password:</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  placeholder="Type your password"
+                  formControlName="password"
+                />
+                <div
+                  *ngIf="passwordControl?.errors && passwordControl?.touched"
+                >
+                  <div *ngIf="passwordControl?.hasError('required')">
+                    <p class="error-message">password is required</p>
+                  </div>
+                </div>
+                <div *ngIf="passwordControl?.hasError('customError')">
+                  <p class="error-message">
+                    {{ authenticationBehaviorService.error }}
+                  </p>
+                </div>
+              </div>
+              <button
+                [disabled]="disableButton"
+                type="submit"
+                class="btn btn-primary btn-block"
+                (click)="onSubmit()"
+              >
+                Sign In
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

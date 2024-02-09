@@ -11,7 +11,7 @@ import com.gonza.api.maverl.apirest.apirestmarvel.log.interfaces.LogService;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
-@RequestMapping("/api/logs")
+@RequestMapping("/logs")
 public class LogController {
 
   @Autowired
