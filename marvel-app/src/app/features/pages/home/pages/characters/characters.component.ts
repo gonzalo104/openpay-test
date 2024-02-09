@@ -25,11 +25,20 @@ export class CharactersComponent {
     this.characters = response?.results || [];
   }
 
-  onCharacterClick(character: any) {
-    this.character = character;
+  async getCharacterById(id: number): Promise<void> {
+    this.character = {};
+
+    const res = await this.characterBehaviorService.getCharacterById(id);
+
     if (this.modal) {
       this.modal.show();
     }
+
+    this.character = res?.results[0] || {};
+  }
+
+  async onCharacterClick(character: any) {
+    await this.getCharacterById(character.id);
   }
 
   getImage(item: any) {

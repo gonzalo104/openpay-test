@@ -45,4 +45,18 @@ export class CharacterBehaviorService {
       throw new Error(error?.message);
     }
   }
+
+  async getCharacterById(id: number): Promise<any> {
+    try {
+      this.loading = true;
+      const character = await lastValueFrom(this.characterHttpService.getCharacterById(id));
+      this.loading = false;
+      return character;
+    } catch (error: any) {
+      this.loading = false;
+      this.error = 'sorry, we could not get the character';
+      throw new Error(error?.message);
+    }
+  }
+
 }

@@ -5,8 +5,9 @@ export class StorageService {
   constructor() {}
 
   public static get(key: string): any {
-    let value = localStorage.getItem(key) || '{}';
-    return JSON.parse(value);
+    let value = localStorage.getItem(key) || '';
+    //return JSON.parse(value);
+    return value;
   }
 
   public static set(key: string, value: any) {

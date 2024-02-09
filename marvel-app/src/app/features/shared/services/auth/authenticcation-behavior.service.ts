@@ -10,8 +10,8 @@ import { StorageService } from '../storage/storage.service';
 })
 export class AuthenticationBehaviorService {
   private readonly key = 'authentication';
-  private readonly authToken$ = new BehaviorSubject<Authentication>(
-    {} as Authentication
+  private readonly authToken$ = new BehaviorSubject<string | null>(
+    null
   );
   private readonly error$ = new BehaviorSubject<string>('');
   private readonly loading$ = new BehaviorSubject<boolean>(false);
@@ -21,14 +21,14 @@ export class AuthenticationBehaviorService {
     private authenticationHttpService: AuthenticationHttpService,
     private router: Router,
   ) {
-    this.authToken = StorageService.get(this.key);
+    this.authToken = StorageService.get(this.key) || null;
   }
 
-  get authToken(): Authentication {
+  get authToken(): string | null {
     return this.authToken$.getValue();
   }
 
-  set authToken(value: Authentication) {
+  set authToken(value: string | null) {
     this.authToken$.next(value);
   }
 
@@ -68,7 +68,7 @@ export class AuthenticationBehaviorService {
 
       this.authToken = loginData.token;
 
-      StorageService.set(this.key, loginData);
+      StorageService.set(this.key, this.authToken);
 
       this.router.navigateByUrl('/home/characters');
     } catch (error: any) {
@@ -80,6 +80,7 @@ export class AuthenticationBehaviorService {
 
   async logout() {
     StorageService.clear();
+    this.authToken = null;
     window.location.href = `${window.location.protocol}//${window.location.host}/login`;
   }
 
